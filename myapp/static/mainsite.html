@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>accent</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <style type="text/css">
+    #hide {
+display: none;
+}
+
+#hidden {
+  display: none;
+}
+     .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+body {
+  background-color: black;
+}
+
+div#navbar {
+  font-family: Staatliches;
+  background-color: black;
+  font-size: 25px;
+  color: black;
+
+}
+
+a.nav-link {
+  color: black;
+}
+
+a.nav-link:hover {
+  color: #7D7D7D;
+}
+
+a.nav-link:active {
+  color: black;
+}
+
+button {
+  background-color: #7D7D7D;
+  color: black;
+  width: 200px;
+  height: 100px;
+  font-family: Josefin Sans;
+  margin-top: 0px;
+}
+
+button:hover {
+  color: white;
+}
+
+input:hover {
+  color: white;
+}
+
+p#preparing:before {
+  animation: animate 3s;
+}
+
+@keyframes animate {
+  0% { content:'Preparing.'; }
+  50% {
+    content: 'Preparing..';
+  }
+  100% {
+    content: 'preparing...';
+  }
+}
+
+p#top {
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 100px;
+  margin-top: 40px;
+
+}
+
+
+p#middle {
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 50px;
+
+}
+p#bottom {
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 30px;
+  margin-left: 50px;
+
+}
+p#bottomer {
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 25px;
+
+}
+
+.vl {
+  border-left: 6px solid white;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+  margin-top: 80px;
+}
+
+img:hover {
+  opacity: 0.2;
+}
+  </style>
+</head>
+<body class="animated fadeIn slower">
+
+<p id="top" class="d-flex justify-content-center animated fadeIn slower">Unsure?</p>
+<p id="middle" class="d-flex justify-content-center animated fadeIn slower">Don't worry. We've got your back.</p>
+<p id="bottomer" class="d-flex justify-content-center animated fadeIn slower">Enter the name of your favorite artist and record or the lyrics of your favorite song.</p>
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col" style="margin-top: 50px;">
+    <p id="bottom">Artist:</p>
+    <textarea id="artist" style="font-family: Josefin Sans; width: 450px; height: 50px; border-radius: 5%; margin-left: 50px;" placeholder="Enter here..."></textarea>
+    <p id="bottom">Record:</p>
+    <textarea id="record" style="font-family: Josefin Sans; width: 450px; height: 50px; border-radius: 5%; margin-left: 50px;" placeholder="Enter here..."></textarea>
+  </div>
+  <div class="col">
+<div class="vl"></div>
+  </div>
+   <div class="col">
+    <textarea id="lyrics" style="font-family: Josefin Sans; width: 450px; height: 300px; margin-top: 50px;border-radius: 5%; margin-right: 80px;" placeholder=" Enter lyrics..."></textarea>
+  </div>
+</div>
+
+
+<div class="d-flex justify-content-center">
+
+<a href="#hide"><button type="button" onclick="myFunction()" class="btn" style="width: 800px; height: 40px; margin-top: 100px; margin-bottom: 20px;">Submit</button></a>
+
+
+<script type="text/javascript">
+  function myFunction() {
+   var artist = document.getElementById("artist").value;
+   var record = document.getElementById("record").value;
+   var lyrics = document.getElementById("lyrics").value;
+   document.getElementById('hide').style.display = "block"
+    document.getElementById('hidden').style.display = "block"
+   //document.getElementById("demo").innerHTML = artist;
+   //document.getElementById("demo1").innerHTML = artist;
+   trackname(record, artist);
+   songname(lyrics);
+}
+</script>
+
+</div>
+<div class="container-fluid" id="hide">
+  <div class="row">
+   <div class="col">
+     <p class="d-flex justify-content-center" style="font-size: 30px; color: white; font-family: Josefin Sans; margin-top: 50px; margin-right: 30px;">Add this song
+     <p class="d-flex justify-content-center" style="font-size: 30px; color: white; font-family: Josefin Sans; margin-right: 30px;"> to your playlist:</p>
+     <div class="container" style="margin-bottom: 40px; position: sticky;" id="hidden">
+  <div class="row">
+    <div class="col">
+<a href="https://open.spotify.com/browse/featured"><img src= "spotify.png" style="width: 100px; height: 100px; margin-left: 60px;"></a>
+</div>
+<div class="col">
+<a href="https://www.pandora.com/"><img src = "pandora.png" style="margin-left: 10px; width: 100px; height: 100px;" ></a>
+</div>
+</div>
+</div>
+   </div>
+   <div class="col">
+    <div class="vl" style="margin-bottom: 30px;"></div>
+   </div>
+   <div class="col">
+     <button class="btn" style="width: 400px; height: 50px; margin-top: 30px;">Song Info</button>
+     <p id="demo" style="color: white; font-family: Josefin Sans; font-size: 12px; "></p>
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+</body>
+<script type="text/javascript">
+  
+  var trackname = function(trackname, artistname){
+    fetch('http://localhost:3000/lyrics?trackname=' + trackname + '&artistname=' + artistname)
+    .then(function(response){
+      return response.json();
+      
+    })
+    .then(function(json){
+      console.log(json['lyrics']);
+    var printLyrics = (json['lyrics']);
+    document.getElementById("demo").innerHTML = printLyrics;
+
+    })
+  }
+
+  var songname = function(songname){
+    fetch('http://localhost:3000/song?songname=' + songname)
+    .then(function(response){
+      return response.json();
+      
+    })
+    .then(function(json){
+      console.log(json['lyrics']);
+    var printLyrics = (json['lyrics']);
+    document.getElementById("demo").innerHTML = printLyrics;
+    console.log(json);
+
+    })
+  }
+
+</script>
+
+
+
+
+<script type="text/javascript" src="calendar.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="autoplay.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="autoplay.js"></script>
+</html>
